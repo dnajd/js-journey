@@ -1,0 +1,14 @@
+# Dot files
+.DS_Store
+.sass-cache
+.bundle
+
+# Directories
+tmp
+dist
+build
+vendor
+
+# Node
+node_modules
+npm-debug.log

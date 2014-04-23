@@ -1,0 +1,41 @@
+// -------------------------------------------------------------------
+// Author
+// -------------------------------------------------------------------
+
+body {
+  @include outer-container;
+  padding: 0 em(20, 20);
+  font-size: em(20);
+  line-height: 1.7;
+}
+
+p {
+  color: #333;
+  font-weight: 100;
+}
+
+section {
+  h2 {
+    margin-top: 0;
+    padding-top: em(60, 20);
+  }
+}
+
+.toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  text-align: center;
+
+  a {
+    display: inline-block;
+    line-height: 1;
+    padding: em(20, 20);
+    font-size: em(16, 20);
+    text-decoration: none;
+    color: #333;
+  }
+}

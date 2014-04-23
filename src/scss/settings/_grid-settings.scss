@@ -1,0 +1,28 @@
+// -------------------------------------------------------------------
+// Grid Settings
+//
+// Overrides Bourbon Neat defaults
+// -------------------------------------------------------------------
+
+// $column: 90px;
+// $gutter: 30px;
+// $grid-columns: 12;
+// $max-width: em(1088);
+
+// -------------------------------------------------------------------
+// Omega Reset Helpers
+// http://joshfry.me/notes/omega-reset-for-bourbon-neat/#update_your_grid_settings
+// -------------------------------------------------------------------
+
+$column: golden-ratio(1em, 2) !default; // Column width
+$gutter: golden-ratio(1em, 1) !default; // Gutter between each two columns
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+// -------------------------------------------------------------------
+// Grid Container max-width
+// http://neat.bourbon.io/docs/#max-width
+// -------------------------------------------------------------------
+
+$max-width: em(650);
