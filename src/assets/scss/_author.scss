@@ -4,7 +4,7 @@
 
 body {
   @include outer-container;
-  padding: 0 em(20, 20);
+  padding: em(20, 20);
   font-size: em(20);
   line-height: 1.7;
 }

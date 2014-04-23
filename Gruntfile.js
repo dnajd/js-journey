@@ -50,7 +50,7 @@ module.exports = function(grunt) {
       build: {
         files : [
           {
-            'dist/assets/css/style.css': 'src/scss/style.scss'
+            'dist/assets/css/style.css': 'src/assets/scss/style.scss'
           }
         ],
         options : {
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 
     concat: {
       components: {
-        src: ['src/js/src/*.js'],
+        src: ['src/assets/js/src/*.js'],
         dest: 'dist/assets/js/scripts.js',
         options: {
           banner: '/*! \n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/ \n\n',
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      beforeconcat: ['src/js/src/*.js', 'Gruntfile.js']
+      beforeconcat: ['src/assets/js/src/*.js', 'Gruntfile.js']
     },
 
     clean: {
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'src/js',
+            cwd: 'src/assets/js',
             src: ['**/*.{js,css}', '!src/**/*'],
             dest: 'dist/assets/js'
           }
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'src/img',
+            cwd: 'src/assets/img',
             src: ['**/*.{png,jpg,gif,svg}'],
             dest: 'dist/assets/img'
           }
