@@ -29,18 +29,10 @@
 
             // events -> mediator
             $('#next-link').click(function(){
-                mediator.trigger('welcomeView-nextViewImpl');
+                mediator.trigger('goodbye-view');
             });
-        },
-
-        nextViewImpl: function(){
-            el.goodbyeView();
         }
     };
-
-    // mediator -> impl
-    var mediator = $({});
-    mediator.on('welcomeView-nextViewImpl', privateObj.nextViewImpl);
 
     // init
     var source = privateObj.loadView();

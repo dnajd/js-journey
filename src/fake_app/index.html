@@ -24,6 +24,16 @@
   <script src="/assets/js/scripts.js"></script>
   <script src="/assets/js/init.js"></script>
   <script language="javascript">
+
+    // routes
+    var mediator = $({});
+
+    // goodbye view
+    mediator.on('goodbye-view', function(){
+      $("#canvas").goodbyeView();
+    });
+
+    // init view
     $("#canvas").welcomeView({ });
   </script>
 </body>
