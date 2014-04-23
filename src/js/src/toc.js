@@ -10,10 +10,11 @@
 
     //////////////////////
     // options
-    options = $.extend({
+    $.fn.toc.options = {
       tocLinks: "h2",
       templateId: "toc-template"
-    }, $.fn.toc.options, options);
+    };
+    options = $.extend({}, $.fn.toc.options, options);
 
     //////////////////////
     // define singleton
