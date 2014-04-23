@@ -6,83 +6,63 @@
 (function ($) {
   $.fn.toc = function(options) {
 
-    options = $.extend({}, $.fn.toc.options, options);
+    var el = $(this);
 
-    // toc vars
-    var el = $(this),
+    //////////////////////
+    // options
+    options = $.extend({
+      tocLinks: "h2",
+      templateId: "toc-template"
+    }, $.fn.toc.options, options);
 
-        // Set default options
-        tocLinks = options.tocLinks;
-
-
-    // Singleton pattern
+    //////////////////////
+    // define singleton
     var toc = {
+
       build: function() {
         var data = this.data();
         this.bindToTemplate(data);
       },
 
-      // Generate data from header tags
+      // gen data from options.tocLinks
       data: function() {
 
-      // Define toc data
-       var data = { sections: [] };
+        // init data
+        var data = { sections: [] };
 
-      // Loop through header tags
-      $(tocLinks).each(function() {
+        // loop each options.tocLinks
+        $(options.tocLinks).each(function() {
 
-          var el = $(this),
-              title = el.text(),
-              link = "#" + el.attr("id");
+          // title & link
+          var tocLinkEl = $(this);
+          var title = tocLinkEl.text();
+          var link = "#" + tocLinkEl.attr("id");
 
-          // Push title/links to sections array in data object
+          // push to data.sections array
           data.sections.push({ title: title, link: link });
         });
 
        return data;
       },
 
-      // Bind data to template using handlebars
+      // bind data to template (handlebars)
       bindToTemplate: function(data) {
-        var source = $("#toc-template").html();
+
+        // compile
+        var source = $("#" + options.templateId).html();
         var template = Handlebars.compile(source);
 
-        // Prepend handlebars template to HTML
+        // prepend
         el.prepend(template(data));
       }
     };
 
-    // Init toc.build
+    //////////////////////
+    // build singleton
     toc.build();
   };
 
-  // toc default options
-  $.fn.toc.options = {
-    tocLinks: "h2"
-  };
-
 })(jQuery);
-
-
-// Initialize toc with custom options
-
-$("#toc").toc({
-  // tocLinks: "h3" // Change toc header links
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /////////////////////////////////
